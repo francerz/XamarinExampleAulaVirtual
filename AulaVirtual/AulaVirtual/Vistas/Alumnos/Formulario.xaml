@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AulaVirtual.Vistas.Alumnos.Formulario"
+             Padding="16">
+    <ContentPage.Content>
+		<StackLayout BindingContext="{Binding Alumno}">
+			<Label Text="Número de control:"/>
+            <Entry Text="{Binding NumControl}" IsReadOnly="{Binding TieneID}"/>
+            <Label Text="Nombre(s):" />
+            <Entry Text="{Binding Nombre}" />
+            <Label Text="Primer apellido:" />
+            <Entry Text="{Binding Apellido1}" />
+            <Label Text="Segundo apellido:" />
+            <Entry Text="{Binding Apellido2}" />
+            <Button x:Name="BtnGuardar" Text="Guardar" Clicked="BtnGuardar_Clicked" />
+			<Button x:Name="BtnEliminar" Text="Eliminar" Clicked="BtnEliminar_Clicked" />
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

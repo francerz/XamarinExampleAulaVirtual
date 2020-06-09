@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AulaVirtual.Vistas.Alumnos.Lista"
+             Title="Alumnos">
+	<ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ToolAgregar" Text="Agregar" Clicked="ToolAgregar_Clicked" />
+		<ToolbarItem x:Name="ToolActualizar" Text="Actualizar" Clicked="ToolActualizar_Clicked" Order="Secondary" />
+	</ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+			<ListView x:Name="ListAlumnos"
+                      HasUnevenRows="True"
+					  RowHeight="-1"
+					  SelectionMode="None"
+                      VerticalOptions="FillAndExpand"
+                      ItemsSource="{Binding Path=Alumnos}"
+                      ItemTapped="ListAlumnos_ItemTapped">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Padding="8" Spacing="0">
+								<Label FontSize="16" Text="{Binding Path=NombreCompleto}" FontAttributes="Bold" />
+							    <Label FontSize="12" Text="{Binding Path=NumControl, StringFormat='Número de control: {0}'}" />
+							</StackLayout>
+						</ViewCell> 
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>
